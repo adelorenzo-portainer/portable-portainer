@@ -1,5 +1,5 @@
 #!/bin/bash
-imagename="rothgar/microbot"
+imagename="portable-portainer"
 if [ $# -eq 0 ];then
  tagver="latest"
 else
@@ -7,4 +7,4 @@ else
 fi
 echo "Now building: ${imagename}:${tagver}"
 docker build --rm=true --no-cache=true --pull=true -t ${imagename}:${tagver} .
-docker push ${imagename}:${tagver}
+#docker push ${imagename}:${tagver}
