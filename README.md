@@ -1,4 +1,4 @@
-portainer-microbot
+portable portainer
 ======================
 
 ## Purpose
@@ -17,4 +17,3 @@ docker run -d -p "8080:80" registry.oe74.net/portable-portainer
 ```
 ➜ ./build
 ```
-# portable-portainer
