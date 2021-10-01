@@ -2,21 +2,15 @@ portainer-microbot
 ======================
 
 ## Purpose
-A 6.5MB Docker image running
-- [Alpine Linux](https://github.com/gliderlabs/docker-alpine)
-- [Nginx](http://nginx.org/)
-- Microbot image/unique html content
+- Portable Portainer intro vid
 
 Intended use is to demo docker orchestration
-- Docker
-- Mesos
-- Marathon
 - Kubernetes
 
 ## Usage
 ### From your machine
 ```
-docker run -d -p "8080:80" registry.oe74.net/portainer-microbot
+docker run -d -p "8080:80" registry.oe74.net/portable-portainer
 ```
 
 ## Build
