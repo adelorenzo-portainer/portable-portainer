@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <style type="text/css">
+    .centered
+      {
+      text-align:center;
+      margin-top:0px;
+      margin-bottom:0px;
+      padding:0px;
+      }
+  </style>
+  <body>
+    <p class="centered"><img src="portainer.png" alt="portainer microbot"/></p>
+    <p class="centered">Hey there! Portainer MicroBOT</p><br>
+    <p class="centered">Container hostname: XXX</p>
+  </body>
+</html>

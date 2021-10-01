@@ -1,0 +1,227 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    kompose.cmd: /kompose convert -f - --stdout
+    kompose.version: 1.22.0 (955b78124)
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"kompose.cmd":"/kompose convert -f - --stdout","kompose.version":"1.22.0 (955b78124)"},"creationTimestamp":null,"labels":{"io.kompose.service":"microbot"},"name":"microbot","namespace":"default"},"spec":{"replicas":1,"selector":{"matchLabels":{"io.kompose.service":"microbot"}},"strategy":{},"template":{"metadata":{"annotations":{"kompose.cmd":"/kompose convert -f - --stdout","kompose.version":"1.22.0 (955b78124)"},"creationTimestamp":null,"labels":{"io.kompose.service":"microbot"}},"spec":{"containers":[{"image":"registry.oe74.net/portainer-microbot","name":"microbot","ports":[{"containerPort":80}],"resources":{}}],"restartPolicy":"Always"}}},"status":{}}
+  creationTimestamp: "2021-07-18T22:32:18Z"
+  generation: 1
+  labels:
+    io.kompose.service: microbot
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kompose.cmd: {}
+          f:kompose.version: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:io.kompose.service: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:kompose.cmd: {}
+              f:kompose.version: {}
+            f:labels:
+              .: {}
+              f:io.kompose.service: {}
+          f:spec:
+            f:containers:
+              k:{"name":"microbot"}:
+                .: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":80,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: kubectl
+    operation: Update
+    time: "2021-07-18T22:32:18Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-07-18T22:32:26Z"
+  name: microbot
+  namespace: default
+  resourceVersion: "1374"
+  uid: 376cee3c-277e-43b7-910c-99e70ef0da4a
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      io.kompose.service: microbot
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /kompose convert -f - --stdout
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: microbot
+    spec:
+      containers:
+      - image: registry.oe74.net/portainer-microbot
+        imagePullPolicy: Always
+        name: microbot
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2021-07-18T22:32:26Z"
+    lastUpdateTime: "2021-07-18T22:32:26Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2021-07-18T22:32:18Z"
+    lastUpdateTime: "2021-07-18T22:32:26Z"
+    message: ReplicaSet "microbot-7c7f78df6" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: /kompose convert -f - --stdout
+    kompose.version: 1.22.0 (955b78124)
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"kompose.cmd":"/kompose convert -f - --stdout","kompose.version":"1.22.0 (955b78124)"},"creationTimestamp":null,"labels":{"io.kompose.service":"microbot"},"name":"microbot","namespace":"default"},"spec":{"ports":[{"name":"81","port":81,"targetPort":80}],"selector":{"io.kompose.service":"microbot"}},"status":{"loadBalancer":{}}}
+  creationTimestamp: "2021-07-18T22:32:18Z"
+  labels:
+    io.kompose.service: microbot
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kompose.cmd: {}
+          f:kompose.version: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:io.kompose.service: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":81,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:io.kompose.service: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl
+    operation: Update
+    time: "2021-07-18T22:32:18Z"
+  name: microbot
+  namespace: default
+  resourceVersion: "1342"
+  uid: 0955e043-b493-4eee-941b-4060d10dc471
+spec:
+  clusterIP: 10.105.23.6
+  clusterIPs:
+  - 10.152.183.6
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: "81"
+    port: 81
+    protocol: TCP
+    targetPort: 80
+  selector:
+    io.kompose.service: microbot
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
