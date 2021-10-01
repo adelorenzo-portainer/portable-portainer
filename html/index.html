@@ -48,7 +48,7 @@ body {
 </head>
 <body>
 
-<video autoplay muted loop id="myVideo">
+<video autoplay muted id="myVideo">
 <source src="un-f-ck.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -77,6 +77,13 @@ function myFunction() {
   }
 }
 </script>-->
+
+<script>
+    var video1 = document.getElementById("myVideo");
+    video1.onended = function(e) {
+        window.location.replace("https://www.portainer.io/solutions/kubernetes-ui");
+    }
+</script>
 
 </body>
 </html>
