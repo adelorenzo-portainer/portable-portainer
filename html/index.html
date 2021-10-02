@@ -2,88 +2,18 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-}
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
-
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-</style>
+  <link rel="stylesheet" href="css/vid.css">
 </head>
 <body>
-
 <video autoplay muted id="myVideo">
-<source src="un-f-ck-720.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
-
-<!--<div class="content">
-  <h1>Portainer is now Kubernetes</h1>
-  <h2>We’re on a mission to unf*ck Kubernetes. Are you with us?</h2>
-  <p>Portainer enables centralized configuration, management and security of Kubernetes and Docker environments, allowing you to deliver ‘Containers-as-a-Service’ to your users quickly, easily and securely.</p>
-  <p>Adopting container orchestration platforms like Kubernetes is hard. To succeed, you need to give everyone secure access to the functionality they need without having to teach them how to speak Kubernetes.</p>
-  <p>With its super-simple 'opinionated' GUI, Portainer makes it easy for everyone to get up and running quickly. It lets Platform Managers centrally configure, manage and secure multi-cluster environments, and it gives Developers the ability to deploy, manage and troubleshoot containerized apps without having to know anything about Kubernetes.</p>
-  <p>Portainer works with Docker, Docker Swarm and Kubernetes. It can be deployed in the cloud on prem or at the edge. Portainer Business is built on Portainer's open source foundation, is  fully supported and suitable for use in all businesses.</p>
-  <button id="myBtn" onclick="myFunction()">Pause</button>
-</div>
-
-<script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
-
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
-</script>-->
-
+    <source src="vids/un-f-ck.m4v" type="video/mp4">
+    Your browser does not support HTML5 video.
+    </video>
 <script>
     var video1 = document.getElementById("myVideo");
     video1.onended = function(e) {
-        window.location.replace("https://www.portainer.io/solutions/kubernetes-ui");
+        window.location.replace("http://localhost:7777/frames.html");
     }
 </script>
-
-</body>
+</body>                                                                                                                                  
 </html>
