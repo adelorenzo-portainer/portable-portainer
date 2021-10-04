@@ -1,0 +1,31 @@
+<html>
+<head>
+      <link rel="stylesheet" href="css/font.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+<style>
+body {font-family:'Raleway', Arial, sans-serif; padding-top: 10px; padding-left: 10px; padding-right: 10px;}
+h2 {font-family:'Raleway', Arial, sans-serif; color: #E86A25;}
+h1,h3,h4,h5,h6,a {font-family:'Raleway', Arial, sans-serif; color: #38DAFF;}
+</style>
+<script src="js/bootstrap.js"></script>
+</head>
+<body>
+    <center><h1>Unf*king Kubernetes tutorial with Portainer</h1></center>
+    <hr>
+    <h2>Deploying an Aplication - a MySQL database</h2>
+    <p>Almost there! We will now deploy our application:</p>
+    <ul>
+      <li>click on <strong>Applications</strong> on the left menu</li>
+      <li>then the <strong>+Add application with form</strong> button</li>
+      <li>select the <strong>tutorial</strong> namespace that we created on the previous step</li>
+      <li>let's name the application on the first field for example, <strong>mydb</strong></li>
+      <li>on the <strong>Image</strong> field you can use <code>ubuntu/mysql</code></li>
+      <li>on <strong>Environment variables, </strong> click on the <strong>+add environment variable</strong> button</li>
+      <li>on the <strong>name</strong> field you add <code>MYSQL_ROOT_PASSWORD</code> and on the <strong>value</strong> field you can add <code>db1234</code></li>
+      <li>you can enable the <strong>Enable publishing for this application </strong>, select <strong>ClusterIP</strong> and type <code>3306</code> on the <strong>container port</strong> field</li>
+      <li>and now you can click on the <strong>Deploy application</strong> button</li>
+    </ul>
+    <br><br>
+    <center><a href="02.html" button type="button" class="btn btn-primary btn-lg btn-block">Previous</a>&nbsp;<a href="04.html" button type="button" class="btn btn-primary btn-lg btn-block">Next</a></center>
+</body>
+</html>

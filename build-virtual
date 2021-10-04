@@ -1,0 +1,11 @@
+#!/bin/bash
+imagename="portable-portainer"
+if [ $# -eq 0 ];then
+ tagver="virtual"
+else
+ tagver="${1}"
+fi
+echo "Now building: ${imagename}:${tagver}"
+docker build --rm=true --no-cache=true --pull=true -t ${imagename}:${tagver} .
+docker image tag portable-portainer:virtual registry.oe74.net:443/portable-portainer:virtual
+docker image push registry.oe74.net:443/portable-portainer:virtual
