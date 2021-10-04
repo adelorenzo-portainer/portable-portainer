@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="refresh" content="14;url=http://localhost:7777/frames.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/vid.css">
-</head>
-<body>
-<video autoplay muted id="myVideo">
-    <source src="vids/un-f-ck.m4v" type="video/mp4">
-    Your browser does not support HTML5 video.
-    </video>
+<link href="css/jquery.simpleTxtSlider.css" rel="stylesheet">
+<link stylesheet="css/font.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.simpleTxtSlider.js"></script>
 <script>
-    var video1 = document.getElementById("myVideo");
-    video1.onended = function(e) {
-        window.location.replace("http://localhost:7777/frames.html");
-    }
+$(function(){
+  $.simpleTxtSlider($("#pakainfo-txtslider-fade-example"),{'effectType':'fade'});
+});
 </script>
-</body>                                                                                                                                  
+
+<style>
+div.txtslider{
+  position: fixed; /* or absolute */
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 120px;
+  color: #38DAFF;
+}
+div.txtslider ul{
+  margin: auto;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+</style>
+<script>
+$(function(){
+$.simpleTxtSlider($("#pakainfo-txtslider-roll-example"),{
+  delay : 3500,  effectType : 'slide',
+  speed : 1500
+});
+  
+});
+</script>
+
+</head>
+<body> 
+<video autoplay loop id="myVideo">
+  <source src="vids/blurred2.mp4" type="video/mp4">
+</video>
+<div id="pakainfo-txtslider-roll-example" class="txtslider">
+<ul>
+<li>Hello....</li>
+<li>We’re on a mission to unf*ck Kubernetes.</li>
+<li>Are you with us?</li>
+<li><img src="img/Portainer-large-alt-positive.png"></li>
+</ul>
+</div>
+</body>
 </html>

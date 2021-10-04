@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/vid.css">
+</head>
+<body>
+<video autoplay muted id="myVideo">
+    <source src="vids/un-f-ck.m4v" type="video/mp4">
+    Your browser does not support HTML5 video.
+    </video>
+<script>
+    var video1 = document.getElementById("myVideo");
+    video1.onended = function(e) {
+        window.location.replace("http://localhost:7777/frames.html");
+    }
+</script>
+</body>                                                                                                                                  
+</html>
